@@ -1,0 +1,9 @@
+# Carpetas de configuración del IDE
+.idea/
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Archivos del sistema operativo
+.DS_Store
