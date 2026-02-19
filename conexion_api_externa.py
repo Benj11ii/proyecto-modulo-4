@@ -49,3 +49,26 @@ def enviar_email_bienvenida(email, nombre):
     time.sleep(0.5)
     print(f"Email de bienvenida registrado en logs (simulado)")
     return True
+
+def validar_formato_id(id_cliente, nombre):
+    """
+    Valida que el ID tenga formato: 3 letras + _ + 3 números
+    Ejemplo: abc_123
+    """
+    try:
+        print(f"🔍 Validando formato de ID: {id_cliente}...")
+        time.sleep(0.5)  # Simula tiempo de procesamiento
+
+        # Patrón: 3 letras (mayúsculas o minúsculas) + guión bajo + 3 números
+        patron = r'^[A-Za-z]{3}_\d{3}$'
+
+        if re.match(patron, id_cliente):
+            print(f"✅ Formato de ID válido para {nombre}")
+            return True
+        else:
+            print(f"❌ Formato incorrecto. Debe ser: 3 letras + _ + 3 números")
+            print(f"   Ejemplos válidos: abc_123, XYZ_789, pqr_456")
+            return False
+    except Exception as e:
+        print(f"⚠️ Error en validación de formato: {e}")
+        return False
